@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+    Detail Mata Kuliah
+{% endblock %}
+{% block content %}
+
+    <div style=" padding-top: 50px; margin-bottom: 400px;">
+        <h3 style="text-align: center;">{{ course }}</h3>
+        <div class="carousel">
+
+            <a href="{% url 'list-all' %}">
+                <button type="button" class="btn btn-warning">Back</button>
+            </a>
+
+            <table style="font-family: arial, sans-serif; width: 50%; text-align: left; margin-top: 50px;">
+                <tr>
+                    <td>Id</td>
+                    <td>{{ course.code }}</td>
+                </tr>
+                <tr>
+                    <td>Course Name</td>
+                    <td>{{ course.name }}</td>
+                </tr>
+                <tr>
+                    <td>Lecturer</td>
+                    <td>{{ course.lecturer }}</td>
+                </tr>
+                <tr>
+                    <td>Credit</td>
+                    <td>{{ course.credit }}</td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>{{ course.semester }} - {{ course.year }}/{{ course.year|add:1 }}</td>
+                </tr>
+                <tr>
+                    <td>Room</td>
+                    <td>{{ course.room }}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>{{ course.desc }}</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

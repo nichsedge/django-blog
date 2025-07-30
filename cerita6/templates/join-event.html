@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+    Events
+{% endblock %}
+
+{% block content %}
+
+    <div style=" padding-top: 50px; margin-bottom: 400px;">
+        <h1 style="text-align: center;">EVENTS</h1>
+        <div class="carousel">
+
+            <a href="{% url 'list-all-event' %}">
+                <button type="button" class="btn btn-warning">Back</button>
+            </a>
+
+        </div>
+
+        <div class="carousel" style="margin: 50px;">
+
+            <h4 class="h4">Join this event</h4>
+
+            <form method="post">
+                {% csrf_token %}
+                <table>
+                    <input type="text" placeholder="Your name..." name="name">
+                </table>
+                <button type="submit" class="save btn btn-warning">Add</button>
+            </form>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

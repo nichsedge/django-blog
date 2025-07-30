@@ -1,0 +1,21 @@
+<!-- header -->
+<div class="grid-container">
+    <div id="blog-name"><a href="{% url 'home' %}" class="link-blog"><<FULLNAME>></a></div>
+    <div class="sosmed">
+        <a href="https://facebook.com" class="fa fa-facebook"></a>
+        <a href="https://twitter.com" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com" class="fa fa-instagram"></a>
+        <a href="https://www.linkedin.com" class="fa fa-linkedin"></a>
+    </div>
+
+    <div id='blog-desc'>Every Amal Is Null</div>
+    <div class="index">
+        <h5>{{ today }}</h5>
+        {% if user.is_authenticated %}
+            <div><a href="{% url 'logout' %}" class="about">LOGOUT</a></div>
+        {% else %}
+            <div><a href="{% url 'login' %}" class="about">LOGIN</a></div>
+        {% endif %}
+
+    </div>
+</div>

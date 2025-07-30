@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block cssjs %}
+
+{% endblock %}
+
+{% block title %}
+    Courses
+{% endblock %}
+
+{% block content %}
+
+
+    <div style=" padding-top: 50px; margin-bottom: 400px;">
+        <h1 style="text-align: center;">Courses</h1>
+        <div class="carousel">
+
+            <a href="{% url 'add_course' %}">
+                <button type="button" class="btn btn-warning">Add</button>
+            </a>
+            <a href="{% url 'remove_course' %}">
+                <button type="button" class="btn btn-warning">Delete</button>
+            </a>
+        </div>
+
+        <div class="carousel" style="margin: 50px;">
+            <table class="table table-bordered table-hover">
+                <thead style="background-color: #85671C; color: white">
+                <tr>
+                    <th>Id</th>
+                    <th>Course Name</th>
+                    <th>Lecturer</th>
+                    <th>Credit (SKS)</th>
+                    <th>Year</th>
+                    <th>Room</th>
+                    <th></th>
+                </tr>
+                </thead>
+                {% for matkul in all_course %}
+                    <tr>
+                        <td>{{ matkul.code }}</td>
+                        <td>{{ matkul.name }}</td>
+                        <td>{{ matkul.lecturer }}</td>
+                        <td>{{ matkul.credit }}</td>
+                        <td>{{ matkul.semester }} - {{ matkul.year }}/{{ matkul.year|add:1 }}</td>
+                        <td>{{ matkul.room }}</td>
+                        <td>
+                            <a href="{% url 'detail-course' matkul.code %}">
+                                <p>detail</p>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

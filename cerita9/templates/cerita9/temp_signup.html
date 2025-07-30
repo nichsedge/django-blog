@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+    <div class="container">
+        <h1>{{ text }}</h1>
+        <form id="form" method="POST" class="left" style="width: 50%; margin: 0 auto">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="email"><strong>{{ form.email.label_tag }}</strong></label>
+                {{ form.email }}
+                <span><p id="email_status" style="color: blue; text-align: center"></p></span>
+            </div>
+
+            <div class="form-group">
+                <label for="name"><strong>{{ form.name.label_tag }}</strong></label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group">
+                <label for="password"><strong>{{ form.password.label_tag }}</strong></label>
+                {{ form.password }}
+            </div>
+            <br>
+            <button id="subscribe" type="button" class="btn btn-warning" value="Save"><h4>Subscribe!</h4></button>
+        </form>
+        <hr>
+
+        {% if user.is_authenticated %}
+            {{ user.get_username }}
+
+        {% else %}
+
+        {% endif %}
+
+
+    </div>
+
+
+{% endblock %}

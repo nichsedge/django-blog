@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Story Accordion
+{% endblock %}
+
+{% block cssjs %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cerita7/css/style.css' %}">
+
+    <script src="{% static 'cerita7/js/jquery.min.js' %}"></script>
+    <script src="{% static 'cerita7/js/script.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div style=" padding-top: 25px; margin-bottom: 100px;">
+        <h1 style="text-align: center;">Story</h1>
+        <div class="story-container" style="margin: 50px;">
+            <table id="movingTable">
+                <tr>
+                    <td>
+                        <div class="accordion">
+                            <h3>Activities</h3>
+                        </div>
+                    </td>
+                    <td onClick="moveRow(this, 1)">
+                        <img src="{% static 'cerita7/img/down.png' %}">
+                    </td>
+                    <td onClick="moveRow(this, -1)">
+                        <img src="{% static 'cerita7/img/up.png' %}">
+                    </td>
+                </tr>
+                <tr class="inner-accordion">
+                    <td colspan="3">
+                        <div class="panel">
+                            <p>Sleeping</p>
+                            <p>Playing</p>
+                            <p>Cutting Claw</p>
+                            <p>Combing Hair</p>
+                            <p>Takraw Soccer</p>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="accordion">
+                            <h3>Experiences</h3>
+                        </div>
+                    </td>
+                    <td onClick="moveRow(this, 1)">
+                        <img src="{% static 'cerita7/img/down.png' %}">
+                    </td>
+                    <td onClick="moveRow(this, -1)">
+                        <img src="{% static 'cerita7/img/up.png' %}">
+                    </td>
+                </tr>
+                <tr class="inner-accordion">
+                    <td colspan="3">
+                        <div class="panel">
+                            <div>
+                                <p>(2018) Nepotism</p>
+                                <p>(2017) Corruption</p>
+                                <p>(2016) Went to Jail</p>
+                                <p>(2001) Given Breath</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="accordion">
+                            <h3>Awards</h3>
+                        </div>
+                    </td>
+                    <td onClick="moveRow(this, 1)">
+                        <img src="{% static 'cerita7/img/down.png' %}">
+                    </td>
+                    <td onClick="moveRow(this, -1)">
+                        <img src="{% static 'cerita7/img/up.png' %}">
+                    </td>
+                </tr>
+                <tr class="inner-accordion">
+                    <td colspan="3">
+                        <div class="panel">
+                            <div>
+                                <p>Physics for Kindergarten</p>
+                                <p>Reciting the Divineness Rhyme</p>
+                                <p>1st Rank on Cheating</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

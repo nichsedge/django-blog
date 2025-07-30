@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Add Course
+{% endblock %}
+
+{% block content %}
+
+
+
+
+    <div style=" padding-top: 50px; margin-bottom: 400px;" class="carousel">
+        <h3 style="text-align: left;">Add Course</h3>
+        <div class="">
+            <a href="{% url 'list-all' %}">
+                <button type="button" class="btn btn-warning">Back</button>
+            </a>
+        </div>
+
+        <div class="row" style="padding-top: 50px; width: 100%;">
+            <div class="col-md-8">
+                <form class="post-form" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="save btn btn-warning">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

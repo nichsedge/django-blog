@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block cssjs %}
+
+{% endblock %}
+
+{% block title %}
+    Detail Event
+{% endblock %}
+
+{% block content %}
+
+
+    <div style=" padding-top: 50px; margin-bottom: 400px;">
+        <h3 style="text-align: center;">{{ course }}</h3>
+        <div class="carousel">
+
+            <a href="{% url 'list-all-event' %}">
+                <button type="button" class="btn btn-warning">Back</button>
+            </a> <a href="{% url 'join-event' event.pk %}">
+            <button type="button" class="btn btn-warning">Join this event!</button>
+        </a>
+
+            <table class="table table-bordered table-hover">
+                <h1>{{ event }}</h1>
+
+                <h5>Member:</h5>
+
+                {{ event.member }}
+                {% for name in member %}
+                    <p> {{ forloop.counter }}. {{ name }}</p></a>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

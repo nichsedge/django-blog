@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block cssjs %}
+    <link rel="stylesheet" href="{% static 'css/cerita6.css' %}">
+{% endblock %}
+
+{% block title %}
+    Events
+{% endblock %}
+{% block content %}
+
+    <div class="main2">
+        <h1>EVENTS</h1>
+        <div class="carousel">
+
+            <a href="{% url 'add-event' %}">
+                <button type="button" class="btn btn-warning">Add Event</button>
+            </a>
+
+        </div>
+        <div class="row">
+            {% for event in events %}
+                <div class="column">
+                    <div class="inner-column">
+                        <h2>{{ event.title }}</h2>
+                        <div>
+                            {% if event.member.all %}
+                                <p>Member:</p>
+
+                                {% for member in event.member.all %}
+                                    <p>{{ forloop.counter }}. {{ member }}</p>
+                                {% endfor %}
+                            {% else %}
+                                <div class="belum">Empty</div>
+                            {% endif %}
+                        </div>
+                        <a href="{% url 'join-event' event.pk %}">
+                            <button type="button" class="btn btn-warning">Join this event</button>
+                        </a>
+                        <a href="{% url 'delete-event' event.pk %}">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+{% endblock %}

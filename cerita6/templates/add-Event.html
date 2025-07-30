@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Add Event
+{% endblock %}
+
+{% block content %}
+
+
+    <div style=" padding-top: 50px; margin-bottom: 400px;">
+        <h1 style="text-align: center;">EVENTS</h1>
+        <div class="carousel">
+
+            <a href="{% url 'list-all-event' %}">
+                <button type="button" class="btn btn-warning">Back</button>
+            </a>
+
+        </div>
+
+        <div class="carousel" style="margin: 50px;">
+
+            <form class="post-form" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="save btn btn-warning">Add</button>
+            </form>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

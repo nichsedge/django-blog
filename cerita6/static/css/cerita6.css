@@ -1,0 +1,52 @@
+.main2 {
+    padding-top: 50px;
+
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 30%;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.inner-column {
+    width: 100%;
+    padding: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+}
+
+.inner-column div {
+    padding-left: 50px;
+    text-align: left;
+}
+
+.row a {
+    text-align: right;
+}
+
+.main2 a {
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.belum {
+    color: red;
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+}

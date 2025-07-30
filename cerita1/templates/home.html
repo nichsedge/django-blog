@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block cssjs %}
+    <script src="{% static 'cerita7/js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block desc_content %}
+"Tugas Perancangan & Pemrograman Web 2020/2021 Ganjil <<FULLNAME>> <<NPM>>. Dibuat dengan penuh kekesalan & kebencian ¯\_ಠ_ಠ_/¯"
+{% endblock %}
+
+{% block content %}
+    <div style="background-color: #85671C">
+        <h1 id="tombol-ppw" class="h1 h1-web-ini in-blue">self.web.content.orangutan;</h1>
+
+        <div class='story-container'>
+            <div id="bar-story" class="bar-story wrap">
+                <a href="{% url 'list-all' %}">Course</a>
+                <a href="{% url 'todo' %}">Todo List</a>
+                <a href="{% url 'list-all-event' %}">Event</a>
+                <a href="{% url 'story7' %}">Story Accordion</a>
+                <a href="{% url 'book_list' %}">Book</a>
+                <a href="{% url 'index' %}">Account</a>
+                {#                <a class="bar-click">RestAPI</a>#}
+                <a href="{% url 'about' %}">About</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- carrousel -->
+    <div class="slider">
+        <h1 class="h1 h1-web-ini in-blue">What I Do</h1>
+        <div class="container">
+            <div class='carousel'>
+                <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel'
+                       type='radio'>
+                <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
+                <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel' type='radio'>
+                <div class='carousel__controls'>
+                    <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-2'>
+                        >
+                    </label>
+                </div>
+                <div class='carousel__controls'>
+                    <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-1'>
+                        <
+                    </label>
+                    <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-3'>
+                        >
+                    </label>
+                </div>
+                <div class='carousel__controls'>
+                    <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-2'>
+                        <
+                    </label>
+                </div>
+
+                <div class='carousel__screen'>
+                    <div class='carousel__track'>
+                        <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="{% static 'images/orangutan.jpg' %}">
+                                <p>oRangutaNing</p>
+                            </div>
+                        </div>
+                        <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="{% static 'images/orangutan.jpg' %}">
+                                <p>oRangutaNing</p>
+                            </div>
+                        </div>
+                        <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="{% static 'images/orangutan.jpg' %}">
+                                <p>oRangutaNing</p>
+                            </div>
+                        </div>
+                        <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="{% static 'images/orangutan.jpg' %}">
+                                <p>oRangutaNing</p>
+                            </div>
+                        </div>
+                        <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="{% static 'images/orangutan.jpg' %}">
+                                <p>oRangutaNing</p>
+                            </div>
+                        </div>
+                        <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="{% static 'images/orangutan.jpg' %}">
+                                <p>oRangutaNing</p>
+                            </div>
+                        </div>
+                        <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                            <div class='demo-content'>
+                                <img src="{% static 'images/orangutan.jpg' %}">
+                                <p>oRangutaNing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- description -->
+    <h1 class="h1 h1-web-ini in-white" id="blog">What I Write</h1>
+{#    <a href="#">#}
+{#        <button class="button-full-blog">Go to Full Blog</button>#}
+{#    </a>#}
+    <div class="article">
+        <p>
+            OrANGUtAN oRAngUTAn ORAnguTAN oranguTAn OraNGUTan OrANgUtAn ORANGutan OrAngUtAn oranGutAn oRANGUTaN
+            OrANGuTan oRanGutaN orANgUTan ORanguTAn oRAngutAn ORangutan oraNgUtaN orANgutAN ORAngUtan oRAngutAN
+            ORaNGUtAN orAnGUtAN ORaNGUtan OrANgUTAn orAngutan oRANgutan oRanGutAN OrANGUTaN OraNguTan oRanGuTan
+            oRaNguTAn ORANgUTan orAngUTan ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN oRANGuTANOranGUTaN orANGUtan
+        </p>
+        <p>
+            OrANGUtAN oRAngUTAn ORAnguTAN oranguTAn OraNGUTan OrANgUtAn ORANGutan OrAngUtAn oranGutAn oRANGUTaN
+            OrANGuTan oRanGutaN orANgUTan ORanguTAn oRAngutAn ORangutan oraNgUtaN orANgutAN ORAngUtan oRAngutAN
+            ORaNGUtAN orAnGUtAN ORaNGUtan OrANgUTAn orAngutan oRANgutan oRanGutAN OrANGUTaN OraNguTan oRanGuTan
+            oRaNguTAn ORANgUTan orAngUTan ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN oRANGuTANOranGUTaN orANGUtan
+            OrANGUtAN oRAngUTAn ORAnguTAN oranguTAn OraNGUTan OrANgUtAn ORANGutan OrAngUtAn oranGutAn oRANGUTaN
+            OrANGuTan oRanGutaN orANgUTan ORanguTAn oRAngutAn ORangutan oraNgUtaN orANgutAN ORAngUtan oRAngutAN
+            ORaNGUtAN orAnGUtAN ORaNGUtan OrANgUTAn orAngutan oRANgutan oRanGutAN OrANGUTaN OraNguTan oRanGuTan
+            oRaNguTAn ORANgUTan orAngUTan ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN ORAnGUtaNorANGutaN orAnGutANoRAngUtan oraNGUtanoRanGUTan OrANGuTaNorANGUtan
+            OrangutAnORAnGUTAN oRANGuTANOranGUTaN orANGUtan
+        </p>
+    </div>
+{% endblock %}

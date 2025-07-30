@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+    Delete Course
+{% endblock %}
+{% block content %}
+
+    <div style=" padding-top: 50px; margin-bottom: 400px;" class="carousel">
+        <h3 style="text-align: left;">Delete Course</h3>
+        <div class="">
+            <a href="{% url 'list-all' %}">
+                <button type="button" class="btn btn-warning">Back</button>
+            </a>
+        </div>
+        <div>
+            <div style="padding-top: 50px;">
+                <form method="post">
+                    {% csrf_token %}
+                    <select name="code_dan_name_matkul">
+                        {% for matkul in course_list %}
+                            <option value="{{ matkul.code }}">{{ matkul.code }} - {{ matkul.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Delete">
+                </form>
+            </div>
+            {% if success %}
+                <p>Successfully Deleted!</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+{% endblock %}

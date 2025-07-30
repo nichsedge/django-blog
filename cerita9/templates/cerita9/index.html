@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block cssjs %}
+    <link rel="stylesheet" href="{% static 'cerita9/css/styles.css' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block title %}
+    Accounts
+{% endblock %}
+
+{% block content %}
+
+    <div style="text-align: center; padding: 5em;">
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">
+                <button type="button" class="btn btn-warning">Logout</button>
+            </a>
+            <h1>Hi {{ user.username }},</h1>
+            <h3>Have a nice day!</h3>
+            <hr>
+            <h3>If you feel like having a bad day or a worst day of your life, please remember.</h3>
+            <h2 style="color: darkred; font-weight: bold">It's just your worst day of your life, so far :)</h2>
+
+            <img src="{% static 'images/homer.jfif' %}" alt="homer-simpson" class="img-fluid">
+            <h3>Don't forget to pray -___-</h3>
+            <img src="{% static 'images/homer-pray.jpg' %}" alt="homer-pray" class="img-fluid">
+            <br>
+
+            <a href="#myModal" class="myDIV trigger-btn" data-toggle="modal">
+                <img width="50" height="50" src="{% static 'images/pandora.png' %}" alt="pandora-box"  class="img-responsive">
+            </a>
+            <h1 class="btn-danger hide">DON'T CLICK ME PLEASE !!!</h1>
+
+            <!-- Modal HTML -->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog modal-confirm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="icon-box">
+                                <i class="material-icons">X</i>
+                            </div>
+                            <h4 class="modal-title w-100">WARNING!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-center">This redirect link contains something that has the potential to make you feel sick and even regret it.</p>
+                            <p>By clicking 'Agree' you agree that the content provider is not responsible for the effects and impacts of what you have consumed from the content.</p>
+                            <p>Please live to the fullest. Be aware of every consequence of your actions on yourself, other humans, other creatures, the environment, culture, religion, and the universe.</p>
+                            <p>Let's pray that we all get blessings and ridho from Allah.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-danger btn-block" href="https://notesonidleness.github.io/" target="_blank">
+                                <button class="btn">Agree</button>
+                            </a>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-block bg-info" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        {% else %}
+            <div style="text-align: center; padding: 5em;">
+                <h2>Don't have an account?</h2>
+                <a href="{% url 'register' %}">Click here to sign up</a>
+                <h2>Have an account?</h2>
+                <a href="{% url 'login' %}">Click here to login</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
